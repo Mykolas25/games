@@ -5,3 +5,6 @@ USE project_ads;
 ALTER TABLE games 
 DROP COLUMN release_date,
 ADD COLUMN release_date YEAR NULL AFTER name;
+
+ALTER TABLE games 
+ADD COLUMN image varchar(255) NULL AFTER release_date;

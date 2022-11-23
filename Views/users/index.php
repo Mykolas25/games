@@ -1,37 +1,37 @@
 <section class="game-list">
     <?php
-    foreach ($games as $game) {
+    foreach ($users as $user) {
     ?>
         <article class="card small">
             <header>
-                <img src="<?= imagesUrl(($game['image'] ?? '')); ?>">
-                <h2><?= $game['name']; ?></h2>
+                <!-- <img src="<?= imagesUrl(($user['image'] ?? '')); ?>">
+                <h2><?= $user['name']; ?></h2> -->
             </header>
             <div class="card-details">
                 <table>
                     <tbody>
                         <tr>
                             <th>Release date</th>
-                            <td><?= $game['release_date']; ?></td>
+                            <td><?= $user['first_name']; ?></td>
                         </tr>
                         <tr>
                             <th>Genre</th>
-                            <td><?= $game['genre']; ?></td>
+                            <td><?= $user['last_name']; ?></td>
                         </tr>
                         <tr>
                             <th>Developer</th>
-                            <td><?= $game['developer']; ?></td>
+                            <td><?= $user['email']; ?></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-            <div class="card-description">
-                <?= $game['description']; ?>
-            </div>
+            <!-- <div class="card-description">
+                <?= $user['description']; ?>
+            </div> -->
             <div class="buttons">
-                <a class="button" href="<?="game/{$game['id']}";?>">Show</a>
-                <a class="button" href="<?="game/{$game['id']}/edit";?>">Edit</a>
-                <form method="POST" class="unsetCss" action="<?= publicUrl("game/{$game['id']}") ?>">
+                <a class="button" href="<?="user/{$user['id']}";?>">Show</a>
+                <a class="button" href="<?="user/{$user['id']}/edit";?>">Edit</a>
+                <form method="POST" action="<?= publicUrl("user/{$user['id']}") ?>">
                     <input type="hidden" name="_method" value="DELETE">    
                     <input class="unsetCss button" type="submit" value="Delete">
                 </form>
